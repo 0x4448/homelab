@@ -6,6 +6,7 @@ COPY download.sh /usr/local/bin/download
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     vim=2:9.0.1378-2 \
+    shellcheck=0.9.0-1 \
     && rm -rf /var/lib/apt/lists/* \
     && pipx install pre-commit==3.6.2 \
     && download hadolint \
