@@ -5,13 +5,15 @@ on:
   push: null
   pull_request: null
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Lint
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read
       statuses: write
 
     steps:
