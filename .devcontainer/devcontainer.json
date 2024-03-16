@@ -1,0 +1,17 @@
+{
+    "name": "0x4448/devcontainer-python",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "postStartCommand": ["pre-commit", "install"],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "eamodio.gitlens",
+                "ms-azuretools.vscode-docker",
+                "redhat.vscode-yaml",
+                "EditorConfig.EditorConfig"
+            ]
+        }
+    }
+}
