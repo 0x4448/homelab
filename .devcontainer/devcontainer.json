@@ -8,6 +8,7 @@
         "vscode": {
             "extensions": [
                 "eamodio.gitlens",
+                "github.vscode-github-actions",
                 "ms-azuretools.vscode-docker",
                 "redhat.vscode-yaml",
                 "EditorConfig.EditorConfig"
