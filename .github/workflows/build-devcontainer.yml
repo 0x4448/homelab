@@ -32,7 +32,7 @@ jobs:
           fetch-depth: 0
 
       - name: Build
-        run: docker image build --tag $GITHUB_SHA .devcontainer/
+        run: docker image build --tag "$GITHUB_SHA" .devcontainer/
 
       - name: Run
-        run: docker container run $GITHUB_SHA
+        run: docker container run "$GITHUB_SHA"
