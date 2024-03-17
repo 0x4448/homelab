@@ -1,0 +1,38 @@
+---
+name: Build dev container
+
+on:
+  pull_request:
+    paths:
+      - ".devcontainer/**"
+
+  push:
+    branches-ignore:
+      - main
+    paths:
+      - ".devcontainer/**"
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build dev container
+    runs-on: ubuntu-latest
+
+    permissions:
+      statuses: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build
+        run: docker image build --tag "$GITHUB_SHA" .devcontainer/
+
+      - name: Run
+        run: docker container run "$GITHUB_SHA"
