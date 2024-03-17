@@ -6,12 +6,6 @@ on:
     paths:
       - ".devcontainer/**"
 
-  push:
-    branches-ignore:
-      - main
-    paths:
-      - ".devcontainer/**"
-
   workflow_dispatch:
 
 permissions:
