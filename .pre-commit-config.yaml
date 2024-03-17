@@ -18,6 +18,11 @@ repos:
       - id: no-commit-to-branch
       - id: trailing-whitespace
 
+  - repo: https://github.com/ansible/ansible-lint
+    rev: ce2ebd7df4486adde693d7a70f0a9cd1814bce35  # v24.2.1
+    hooks:
+      - id: ansible-lint
+
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: 07fd005463366385a8b0fa97c8d2a25b5bac19e0  # v3.1.0
     hooks:
