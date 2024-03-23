@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - ".devcontainer/**"
+      - ".github/workflows/build-devcontainer.yml"
 
   workflow_dispatch:
 
@@ -28,5 +29,10 @@ jobs:
       - name: Build
         run: docker image build --tag "$GITHUB_SHA" .devcontainer/
 
-      - name: Run
-        run: docker container run "$GITHUB_SHA"
+      - name: Install hooks
+        run: >-
+          docker container run
+          --mount type=bind,source="$GITHUB_WORKSPACE",target=/src
+          --workdir /src
+          "$GITHUB_SHA"
+          /bin/bash -c "git config --global --add safe.directory /src; pre-commit install --install-hooks"
