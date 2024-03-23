@@ -3,7 +3,7 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "postStartCommand": ["pre-commit", "install"],
+    "postStartCommand": ["pre-commit", "install", "--install-hooks"],
     "customizations": {
         "vscode": {
             "extensions": [
