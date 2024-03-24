@@ -1,0 +1,32 @@
+---
+name: Run Ansible playbook
+
+on:
+  pull_request:
+    paths:
+      - "init.sh"
+      - "playbook.yml"
+      - "roles/**"
+      - ".github/workflows/run-playbook.yml"
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  run-playbook:
+    name: Run Ansible playbook
+    runs-on: ubuntu-22.04
+
+    permissions:
+      statuses: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run playbook
+        run: sudo ./init.sh
