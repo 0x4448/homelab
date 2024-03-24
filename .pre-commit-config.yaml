@@ -21,6 +21,11 @@ repos:
       - id: no-commit-to-branch
       - id: trailing-whitespace
 
+  - repo: https://github.com/rhysd/actionlint
+    rev: c6bd06256dd700a45e483869bcdcf304239393a6  # v1.6.27
+    hooks:
+      - id: actionlint-system
+
   - repo: https://github.com/ansible/ansible-lint
     rev: ce2ebd7df4486adde693d7a70f0a9cd1814bce35  # v24.2.1
     hooks:
