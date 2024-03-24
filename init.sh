@@ -45,7 +45,10 @@ export PIPX_HOME=/usr/local/pipx
 export PIPX_BIN_DIR=/usr/local/bin
 pipx install ansible-core
 
-cd "$repoDir" || exit 1
-git clone "https://github.com/0x4448/homelab" .
-git switch "$branch"
+if [[ -z ${CI-} ]]; then
+  cd "$repoDir" || exit 1
+  git clone "https://github.com/0x4448/homelab" .
+  git switch "$branch"
+fi
+
 ansible-playbook --become playbook.yml
