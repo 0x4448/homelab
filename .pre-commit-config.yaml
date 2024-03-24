@@ -2,6 +2,9 @@ default_install_hook_types:
   - pre-commit
   - commit-msg
 
+default_stages:
+  - pre-commit
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: c4a0b883114b00d8d76b479c820ce7950211c99b  # v4.5.0
@@ -28,7 +31,8 @@ repos:
     rev: 07fd005463366385a8b0fa97c8d2a25b5bac19e0  # v3.1.0
     hooks:
       - id: conventional-pre-commit
-        stages: [commit-msg]
+        stages:
+          - commit-msg
 
   - repo: https://github.com/hadolint/hadolint
     rev: b3555ba9c2bfd9401e79f2f0da68dd1ae38e10c7  # v2.12.0
