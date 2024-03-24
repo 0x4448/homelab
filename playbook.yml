@@ -1,0 +1,5 @@
+---
+- name: Setup
+  hosts: localhost
+  roles:
+    - ansible_agent

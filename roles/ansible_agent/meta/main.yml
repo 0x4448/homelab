@@ -1,0 +1,12 @@
+galaxy_info:
+  author: "0x4448"
+  description: Ansible GitOps Agent
+  company: "0x4448"
+  license: MIT
+  min_ansible_version: "2.1"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - jammy
+  galaxy_tags: []
+dependencies: []
