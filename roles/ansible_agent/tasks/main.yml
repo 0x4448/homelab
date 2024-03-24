@@ -1,0 +1,3 @@
+---
+- name: Create ansible user.
+  ansible.builtin.include_tasks: "{{ role_path }}/tasks/user.yml"

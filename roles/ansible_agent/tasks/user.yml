@@ -1,0 +1,17 @@
+---
+- name: Add ansible group.
+  ansible.builtin.group:
+    name: ansible
+    state: present
+    system: true
+
+- name: Add ansible user.
+  ansible.builtin.user:
+    name: ansible
+    group: ansible
+    create_home: true
+    home: /home/ansible
+    shell: /sbin/nologin
+    state: present
+    system: true
+    umask: "077"
