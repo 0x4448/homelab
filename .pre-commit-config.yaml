@@ -33,7 +33,7 @@ repos:
         args: [--exclude, .github/]
 
   - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: 07fd005463366385a8b0fa97c8d2a25b5bac19e0  # v3.1.0
+    rev: 772d7ffaeee5d611a904cc564a3fe3c7ad927635  # v3.2.0
     hooks:
       - id: conventional-pre-commit
         stages:
