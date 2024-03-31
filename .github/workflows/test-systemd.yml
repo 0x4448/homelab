@@ -1,0 +1,26 @@
+---
+name: Test systemd
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  run-playbook:
+    name: Test systemd
+    runs-on: ubuntu-22.04
+
+    permissions:
+      statuses: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check enabled units
+        run: systemctl --no-pager list-unit-files --state=enabled
