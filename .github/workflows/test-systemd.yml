@@ -24,3 +24,9 @@ jobs:
 
       - name: Check enabled units
         run: systemctl --no-pager list-unit-files --state=enabled
+
+      - name: Check sudoers
+        run: sudo cat /etc/sudoers
+
+      - name: Check sudoers.d
+        run: sudo find /etc/sudoers.d -type f -exec cat {} \;
