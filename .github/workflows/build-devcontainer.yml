@@ -6,6 +6,7 @@ on:
     paths:
       - ".devcontainer/**"
       - ".github/workflows/build-devcontainer.yml"
+      - ".pre-commit-config.yaml"
 
   workflow_dispatch:
 
