@@ -4,9 +4,9 @@
 #
 #    pip-compile --allow-unsafe --generate-hashes
 #
-ansible-core==2.16.6 \
-    --hash=sha256:111e55d358c2297ec0ce03ba98e6c5ce95947fdf50d878215eb8c183d0c275e4 \
-    --hash=sha256:f9dea5044a86fd95cc27099f4f5c3ae9beb23acf7c3b6331455726c47825922b
+ansible-core==2.17.0 \
+    --hash=sha256:a5de008985cd51eb01599cf1a14d3b45f917095ac6cdab867b0d11c3f922c343 \
+    --hash=sha256:bd16e30ecac405dac594de3e1b1b4d9cc6fa1a9f7a01a6a8d4c471b20660716d
     # via -r requirements.in
 build==1.1.1 \
     --hash=sha256:8ed0851ee76e6e38adce47e4bee3b51c771d86c64cf578d0c2245567ee200e73 \
