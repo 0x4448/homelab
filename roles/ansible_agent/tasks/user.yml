@@ -15,3 +15,17 @@
     state: present
     system: true
     umask: "077"
+
+- name: Set home directory ownership recursively.
+  ansible.builtin.file:
+    path: /home/ansible
+    state: directory
+    owner: ansible
+    group: ansible
+    recurse: true
+
+- name: Set restrictive permissions on home directory.
+  ansible.builtin.file:
+    path: /home/ansible
+    state: directory
+    mode: '0700'
