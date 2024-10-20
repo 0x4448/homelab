@@ -1,0 +1,29 @@
+text
+
+keyboard --xlayouts='us'
+lang en_US.UTF-8
+timezone Etc/UTC --utc
+
+network --bootproto=dhcp
+url --mirrorlist="https://mirrors.almalinux.org/mirrorlist/9/baseos"
+
+bootloader --append="rhgb quiet crashkernel=1G-4G:192M,4G-64G:256M,64G-:512M"
+zerombr
+clearpart --all --initlabel
+autopart
+
+rootpw --lock
+user --groups=wheel --name=dh --password=ChangeMe
+
+%addon com_redhat_kdump --enable --reserve-mb='auto'
+%end
+
+%packages
+@^minimal-environment
+@standard
+%end
+
+selinux --enforcing
+firewall --enabled --ssh
+firstboot --disable
+reboot --eject
