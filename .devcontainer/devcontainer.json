@@ -16,7 +16,9 @@
       "extensions": [
         "eamodio.gitlens",
         "github.vscode-github-actions",
+        "hashicorp.terraform",
         "ms-azuretools.vscode-docker",
+        "redhat.ansible",
         "redhat.vscode-yaml",
         "EditorConfig.EditorConfig"
       ]
