@@ -53,8 +53,14 @@ function download {
   rm -rf "$tempDir"
 }
 
+wget -O- https://apt.releases.hashicorp.com/gpg |
+  gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" |
+  tee /etc/apt/sources.list.d/hashicorp.list
+
 apt-get update
 apt-get install --no-install-recommends --yes \
+  terraform=1.9.8-1 \
   shellcheck=0.9.0-1 \
   vim=2:9.0.1378-2
 rm -rf /var/lib/apt/lists/*

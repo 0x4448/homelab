@@ -1,0 +1,17 @@
+---
+- name: No DigitalOcean DNS config file
+  ansible.builtin.file:
+    path: /etc/systemd/resolved.conf.d/DigitalOcean.conf
+    state: absent
+  notify:
+    - Restart systemd-resolved
+
+- name: Quad9 DNS config file
+  ansible.builtin.copy:
+    src: quad9.conf
+    dest: /etc/systemd/resolved.conf.d/quad9.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - Restart systemd-resolved
