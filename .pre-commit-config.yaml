@@ -7,7 +7,7 @@ default_stages:
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: c4a0b883114b00d8d76b479c820ce7950211c99b  # v4.5.0
+    rev: c4a0b883114b00d8d76b479c820ce7950211c99b # v4.5.0
     hooks:
       - id: check-added-large-files
       - id: check-executables-have-shebangs
@@ -22,29 +22,29 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/rhysd/actionlint
-    rev: c6bd06256dd700a45e483869bcdcf304239393a6  # v1.6.27
+    rev: c6bd06256dd700a45e483869bcdcf304239393a6 # v1.6.27
     hooks:
       - id: actionlint-system
 
   - repo: https://github.com/ansible/ansible-lint
-    rev: ce2ebd7df4486adde693d7a70f0a9cd1814bce35  # v24.2.1
+    rev: ce2ebd7df4486adde693d7a70f0a9cd1814bce35 # v24.2.1
     hooks:
       - id: ansible-lint
         args: [--exclude, .github/]
 
   - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: 772d7ffaeee5d611a904cc564a3fe3c7ad927635  # v3.2.0
+    rev: 772d7ffaeee5d611a904cc564a3fe3c7ad927635 # v3.2.0
     hooks:
       - id: conventional-pre-commit
         stages:
           - commit-msg
 
   - repo: https://github.com/hadolint/hadolint
-    rev: b3555ba9c2bfd9401e79f2f0da68dd1ae38e10c7  # v2.12.0
+    rev: b3555ba9c2bfd9401e79f2f0da68dd1ae38e10c7 # v2.12.0
     hooks:
       - id: hadolint
 
   - repo: https://github.com/gruntwork-io/pre-commit
-    rev: d0bcdb35c6999a4a120b528f050d2b11778fd3d0  # v0.1.23
+    rev: d0bcdb35c6999a4a120b528f050d2b11778fd3d0 # v0.1.23
     hooks:
       - id: shellcheck

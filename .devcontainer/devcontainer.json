@@ -1,18 +1,28 @@
 {
-    "name": "0x4448/devcontainer-python",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-    "postStartCommand": ["pre-commit", "install", "--install-hooks"],
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "eamodio.gitlens",
-                "github.vscode-github-actions",
-                "ms-azuretools.vscode-docker",
-                "redhat.vscode-yaml",
-                "EditorConfig.EditorConfig"
-            ]
-        }
+  "name": "0x4448/devcontainer-python",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": [
+    "npm",
+    "install",
+    "--save-dev",
+    "--save-exact",
+    "prettier"
+  ],
+  "postStartCommand": ["pre-commit", "install", "--install-hooks"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "github.vscode-github-actions",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml",
+        "EditorConfig.EditorConfig"
+      ]
     }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
+  }
 }
