@@ -1,0 +1,19 @@
+---
+- name: Cloudflare Tunnel
+  hosts: all
+  remote_user: root
+  gather_facts: false
+
+  pre_tasks:
+    - name: Wait for connection
+      ansible.builtin.wait_for_connection:
+
+    - name: Wait for Droplet Agent to be installed (package manager lock)
+      ansible.builtin.wait_for:
+        path: /etc/systemd/system/droplet-agent.service
+
+    - name: Gather facts
+      ansible.builtin.gather_facts:
+
+  roles:
+    - cloudflare_tunnel
